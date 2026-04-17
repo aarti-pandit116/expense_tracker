@@ -1,13 +1,6 @@
+import 'package:expense_tracker/screens/expense.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Column(children: [Text("Hello World"), Text("Hello World")]),
-        ),
-      ),
-    ),
-  );
+  runApp(MaterialApp(home: Expense()));
 }
