@@ -15,16 +15,37 @@ class ExpenseItem extends StatelessWidget {
         children: [
           Row(
             mainAxisAlignment: .spaceBetween,
-            children: [Text(expense.title)],
+            children: [
+              Text(
+                expense.title,
+                style: Theme.of(
+                  context,
+                ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w700),
+              ),
+            ],
           ),
           Row(
             mainAxisAlignment: .spaceBetween,
             children: [
-              Text("₹${expense.amount.toStringAsFixed(2)}"),
+              Text(
+                "₹${expense.amount.toStringAsFixed(2)}",
+                style: Theme.of(
+                  context,
+                ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w400),
+              ),
               Row(
+                spacing: 6,
                 children: [
-                  Icon(categoryIcons[expense.category]),
-                  Text(expense.formattedDate),
+                  Icon(
+                    categoryIcons[expense.category],
+                    color: Theme.of(context).textTheme.titleLarge?.color,
+                  ),
+                  Text(
+                    expense.formattedDate,
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
                 ],
               ),
             ],
